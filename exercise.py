@@ -13,3 +13,11 @@ philosophy | x, y, z   | I don't have time for *philosophy*
 ---------------------------------------------------
 ---        | ---       | ---
 """
+
+
+def get_common_words():
+    return True
+
+
+if __name__ == '__main__':
+    get_common_words()
