@@ -34,3 +34,7 @@ To run the tests:
 `
 $ pytest
 `
+
+## TODO
+- Filter out just nouns with pos_tag or TextBlob
+- Output the table to HTML
