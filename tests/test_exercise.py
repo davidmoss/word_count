@@ -22,8 +22,14 @@ def test_get_common_words():
 def test_tokenize_text():
     text = 'This is a good sentance. This is another one'
     assert tokenize_text(text) == [
-        ('This is a good sentance.', ['This', 'is', 'a', 'good', 'sentance', '.']),
-        ('This is another one', ['This', 'is', 'another', 'one']),
+        (
+            'This is a good sentance.',
+            ['This', 'is', 'a', 'good', 'sentance', '.'],
+        ),
+        (
+            'This is another one',
+            ['This', 'is', 'another', 'one'],
+        ),
     ]
 
 

@@ -17,23 +17,29 @@ A Natural language Processor (such as NLTK) can help tokenise the documents and 
 
 ## Pre-requisites
 To install requirements and enable virtual environment in Python 3.7:
-`
+
+```
 $ pipenv install
 $ pipenv shell
 $ python -m nltk.downloader popular
-`
+```
 
-## Usage
+## Usage
 To run the exercise:
-'
+
+```
 $ python exercise.py
-'
+```
 
 ## Run tests
 To run the tests:
-`
+
+```
 $ pytest
-`
+```
 
 ## TODO
 - Filter out just nouns with pos_tag or TextBlob
+- Offer the count number of common words a command line argument
+- Map the words to where they appear in the sentance for highlighting
+- Offer searching capabilities for words

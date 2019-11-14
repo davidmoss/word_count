@@ -15,7 +15,7 @@
         </td>
         <td>
           {% for sent_idx in word.sentances %}
-            {{ sentances[sent_idx] }}
+            {{ sentances[sent_idx]|replace(key, "<b>"+key+"</b>") }}
           {% endfor %}
         </td>
       </tr>

@@ -109,7 +109,11 @@ def filter_words(words):
     # Remove stems
     lemmatizer = WordNetLemmatizer()
     # remove stop words and punctuation
-    stop_words = list(STOP_WORDS) + list(string.punctuation) + stopwords.words('english')
+    stop_words = (
+        list(STOP_WORDS) +
+        list(string.punctuation) +
+        stopwords.words('english')
+    )
     return [
         lemmatizer.lemmatize(word).lower()
         for word in words if word not in stop_words
