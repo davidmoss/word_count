@@ -18,6 +18,8 @@ from collections import OrderedDict, defaultdict
 from itertools import islice
 from pathlib import Path
 
+from jinja2 import Environment, FileSystemLoader
+
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize, word_tokenize
@@ -36,12 +38,25 @@ class Word():
         self.sentances.add(sent_idx)
 
     def __repr__(self):
-        return f'count={self.count} documents={self.documents} sentances={self.sentances}'
+        return (
+            f'count={self.count}'
+            f'documents={self.documents}'
+            f'sentances={self.sentances}'
+        )
 
 
 def output_table(common_words, documents, sentances):
-    import pprint
-    pprint.pprint(common_words)
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('table.html')
+    context = {
+        'words': common_words,
+        'documents': documents,
+        'sentances': sentances,
+    }
+    table_html = template.render(**context)
+    with open('table.html', 'w') as result_file:
+        result_file.write(table_html)
 
 
 def get_common_words(word_map, count=10):

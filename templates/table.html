@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <td>Word(#)</td>
+    <td>Documents</td>
+    <td>Sentences containing the word</td>
+  </thead>
+  <tbody>
+    {% for key, word in words.items() %}
+      <tr>
+        <td>{{ key }}</td>
+        <td>
+          {% for doc_idx in word.documents %}
+            {{ documents[doc_idx] }}
+          {% endfor %}
+        </td>
+        <td>
+          {% for sent_idx in word.sentances %}
+            {{ sentances[sent_idx] }}
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
